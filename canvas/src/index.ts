@@ -12,7 +12,6 @@ const d = req.fetchData().then((d) => {
 
   JSON.stringify(d);
   const keys = Object.keys(d[0]);
-
   const topRow = document.createElement("tr");
   topRow.style.background = "#2e2d4d";
   topRow.style.color = "#fff";

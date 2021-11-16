@@ -1,6 +1,5 @@
 export class SendRequest {
   private data: any[] = [];
-
   private getData() {
     return this.data;
   }
@@ -21,7 +20,9 @@ export class SendRequest {
     )
       .then((res) => res.json())
       // .then((rec) => console.log(rec.result[0]))
-      .then((rec) => rec.result.map((d: any) => this.setData(d)))
+      .then((rec) => {
+        return rec.result.map((d: any) => this.setData(d));
+      })
       .catch((err: any) => console.error(err));
     return this.getData();
   };
